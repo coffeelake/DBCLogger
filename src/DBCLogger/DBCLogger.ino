@@ -31,5 +31,7 @@ void setup() {
 }
 
 void loop() {
-  clickHandler();  
+  clickHandler();
+  SensorsHandler();
+  LoggHandler();
 }

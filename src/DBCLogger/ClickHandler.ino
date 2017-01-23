@@ -59,5 +59,20 @@ void clickHandler()
       }
     }
   }
+  //data screen
+  if (currentPage == '3') {
+    if (myTouch.dataAvailable()) {
+      myTouch.read();
+      x = myTouch.getX(); // X coordinate where the screen has been pressed
+      y = myTouch.getY(); // Y coordinates where the screen has been pressed
+      if ((x >= 2) && (x <= 52) && (y >= 180) && (y <= 230)) {
+
+        drawFrame(2, 180, 52, 230); // Custom Function -Highlighs the buttons when it's pressed
+        currentPage = '0'; // Indicates that we are the first example
+        myGLCD.clrScr(); // Clears the screen
+        drawHomeScreen();
+      }
+    }
+  }
 }
 
