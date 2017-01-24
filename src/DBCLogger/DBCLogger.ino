@@ -4,7 +4,7 @@
 
 #include <UTFT.h>
 #include <URTouch.h>
-
+#include ".\Sensor.h"
 //==== Creating Objects
 UTFT    myGLCD(SSD1289, 38, 39, 40, 41); //Parameters should be adjusted to your Display/Schield model
 URTouch  myTouch( 6, 5, 4, 3, 2);
@@ -17,7 +17,17 @@ char currentPage, selectedUnit;
 int x, y;
 extern unsigned int w[12720]; // Warning Bitmap
 
+
+
+Sensor sensors [5] = {Sensor("Whater out"),Sensor("Whater in"),Sensor("oil 2 cooler"),Sensor("oil from cooler"),Sensor("oil turbo out")};
+
 void setup() {
+
+
+
+
+
+  
   // Initial setup
   myGLCD.InitLCD();
   myGLCD.clrScr();
@@ -28,6 +38,8 @@ void setup() {
   drawHomeScreen();  // Draws the Home Screen
   currentPage = '0'; // Indicates that we are at Home Screen
   selectedUnit = '0'; // Indicates the selected unit for the first example, cms or inches
+
+
 }
 
 void loop() {
@@ -35,3 +47,4 @@ void loop() {
   SensorsHandler();
   LoggHandler();
 }
+
