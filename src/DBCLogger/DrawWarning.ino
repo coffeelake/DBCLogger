@@ -1,5 +1,6 @@
 void drawWarning(String text,String data)
 {
+  myGLCD.clrScr();
   myGLCD.setBackColor(0, 0, 0); // Sets the background color of the area where the text will be printed to black
   myGLCD.setFont(BigFont);  
   myGLCD.setColor(255, 255, 255); // Sets color to white
